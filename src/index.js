@@ -1,3 +1,4 @@
+//SOLUCIÓN 1
 var array = [1, 2, 3, 4, 5];
 var sum = 1;
 var result = [];
@@ -15,3 +16,23 @@ for (var i = 0; i < qty; i++) {
 }
 
 console.log(result);
+
+//SOLUCIÓN REFACTORIZADA
+var arrayRefactor = [1, 2, 3, 4, 5];
+var resultRefactor = [];
+let op;
+
+for (var iRefactor = 0; iRefactor < arrayRefactor.length; iRefactor++) {
+  op = 1;
+  for (
+    var indexRefactor = 0;
+    indexRefactor < arrayRefactor.length;
+    indexRefactor++
+  ) {
+    if (indexRefactor === iRefactor) continue;
+    op *= arrayRefactor[indexRefactor];
+  }
+  resultRefactor.push(op);
+}
+
+console.log(resultRefactor);
